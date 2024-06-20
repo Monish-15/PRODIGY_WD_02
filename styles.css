@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  body {
+    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url('image.jpg'); /* Replace 'image.jpg' with your actual image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 60% opacity overlay */
+    z-index: -1;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .stopwatch {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 24px;
+    border-radius: 10px;
+  }
+  
+  .timerDisplay {
+    font-size: 50px;
+    font-weight: 600;
+    background: none; /* Remove background */
+    background: linear-gradient(to right, #ff9933, #ff5050); /* Gradient color for text */
+    background-clip: text; /* Standard */
+    -moz-background-clip: text; /* Mozilla Firefox */
+    color: transparent; /* Hide original text color */
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #ffffff; /* Default text color */
+    padding: 12px 24px;
+    margin-inline: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative; /* Position relative for absolute positioning of text shadow */
+  }
+  
+  .btn::before {
+    content: attr(data-text); /* Use data-text attribute for button text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff; /* Color for text shadow */
+    text-shadow: 0 0 2px #000000; /* Simplified text shadow effect */
+  }
+  
+  .btn:hover::before {
+    color: transparent; /* Hide text on hover */
+  }
+  
+  #startBtn::before,
+  #stopBtn::before,
+  #resetBtn::before {
+    background: linear-gradient(to right, #ff9933, #ff5050);
+    background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+  }
